@@ -22,21 +22,21 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'],function(){
     Route::get('news/edit', 'Admin\NewsController@edit')->middleware('auth'); // 追記（PHP/Laravel 16）
     Route::post('news/edit', 'Admin\NewsController@update')->middleware('auth'); // 追記（PHP/Laravel 16）
     Route::get('news/delete', 'Admin\NewsController@delete')->middleware('auth');
-    
+
     Route::get('profile/create','Admin\ProfileController@add')->middleware('auth');
     Route::post('profile/create', 'Admin\ProfileController@create'); // PHP/Laravel 13 応用3
     Route::get('profile/edit','Admin\ProfileController@edit')->middleware('auth');
     Route::post('profile/edit', 'Admin\ProfileController@update'); // PHP/Laravel 13 応用6
-    
-    
-    
+
+
+
 });
 
 
-// (課題) 
+// (課題)
     // 「http://XXXXXX.jp/XXX というアクセスが来たときに、
     // AAAControllerのbbbというAction に渡すRoutingの設定」を書いてみてください。
-    
+
 //  Route::get('XXX','AAAController@bbb');
 
 
@@ -44,10 +44,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+//Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/', 'NewsController@index');
+//Route::get('/', 'NewsController@index');
 
-Route::get('/profile', 'ProfileController@index');
+//Route::get('/profile', 'ProfileController@index');
